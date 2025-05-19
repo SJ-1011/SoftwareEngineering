@@ -1,0 +1,29 @@
+Create a Game
+-> 서버 생성
+Enter the game
+-> 이미 있는 서버에 입장
+Go back
+
+Create a Game
+1. 게임 로비 화면 표시
+2. 빈 슬롯에 접속할 수 있는 플레이어 할당
+3. 로비 화면 위에 방의 IP주소 표시
+4. 비밀번호 설정 기능
+
+Enter the Game
+1. 선택 시 IP주소 입력 창이 나옴 OK
+2. 주소 입력 후 접속 버튼 누르면 접속 OK
+3. 비밀번호가 있다면 이후에 비밀번호 입력 창이 뜸
+4. 입력하면 로비로 들어가게됨
+5. 접속할 슬롯이 없으면 오류 메시지 표시
+ - 방장과 플레이어 모두 해당 부분 확인할 수 있어야함
+
+
+
+import urllib.request
+
+def get_public_ip():
+    url = 'https://api.ipify.org'
+    with urllib.request.urlopen(url) as response:
+        ip = response.read().decode('utf-8')
+    return ip
